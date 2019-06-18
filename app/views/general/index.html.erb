@@ -1,0 +1,11 @@
+<h1>ARTS</h1>
+<h2>Come see some arts by <%= Admin.first.name %> </h2>
+
+<% @posts.each do |post| %>
+    <h4><%= post.title %></h4>
+    <p><%= post.description %></p>
+    <% if post.avatar.attached? %>
+        <image src="<%=(url_for(post.avatar))%>">
+    <% end %>
+<% end %>
+  
